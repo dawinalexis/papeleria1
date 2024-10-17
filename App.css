@@ -1,0 +1,597 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.discount-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.discount-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+.discount-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.discount-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.discount-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Estilos para el contenedor del carrusel */
+.carousel-container {
+  width: 100%;
+  position: relative;
+  height: 80vh; /* Ajusta la altura al 80% del viewport height */
+  margin-bottom: 2rem;
+}
+
+/* Estilos para el carrusel */
+.carousel {
+  height: 100% !important; /* Fuerza la altura completa */
+  width: 100% !important;
+}
+
+/* Estilos para los items del carrusel */
+.carousel-item {
+  height: 100% !important;
+  width: 80% !important;
+}
+
+.carousel-item img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Estilos para los botones de navegación */
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8) !important;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
+/* Ajustes para la sección hero */
+.hero-section {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  min-height: auto !important;
+}
+
+/* Ajustes para el contenedor principal */
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Ajustes para el texto debajo del carrusel */
+.hero-section .center-align {
+  padding: 2rem;
+  background: white;
+}
+
+.horizontal-scroll {
+  grid-column: 2 / 3; /* Toma la segunda columna */
+  display: flex;
+  overflow-x: scroll;
+  width: 90%; /* El scroll horizontal ocupa el 100% del ancho de su contenedor */
+  height: 87%;
+  margin-top: 40px; /* Espacio superior para separar la segunda columna de los productos */
+}
+
+.horizontal-scroll-item {
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #ddd; /* Añade un borde alrededor de cada producto */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding: 10px; /* Espacio interno */
+  margin: 0 10px; /* Espacio externo entre productos */
+}
+
+.horizontal-scroll img {
+  width: 150px;
+  height: 150px;
+  margin: 10px 20px;
+}
+
+.sold-amount {
+  color: grey; /* Texto en gris */
+  font-size: 0.8em; /* Tamaño de fuente pequeño */
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0; /* Espacio vertical entre los precios */
+}
+
+.original-price {
+  color: black; /* Precio original en negro */
+  text-decoration: line-through; /* Precio tachado */
+  margin-right: 10px; /* Espacio entre los precios */
+}
+
+.discount-price {
+  color: red; /* Precio con descuento en rojo */
+  font-weight: bold; /* Hace el precio en rebaja más llamativo */
+}
+
+.btn-aprovecha {
+  background-color: red; /* Botón en rojo */
+  color: white; /* Texto en blanco */
+  padding: 5px 10px; /* Espacio interno */
+  border-radius: 5px; /* Esquinas redondeadas */
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-aprovecha:hover {
+  background-color: darkred; /* Color más oscuro al pasar el cursor */
+
+}
+/* Estilos para el contenedor de búsqueda */
+.nav-wrapper .search-wrapper {
+  position: relative;
+  margin: 0 12px;
+}
+
+/* Input de búsqueda */
+.nav-wrapper .search-wrapper input.search-input {
+  height: 36px;
+  width: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  color: white;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+/* Placeholder color */
+.nav-wrapper .search-wrapper input.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Input activo */
+.nav-wrapper .search-wrapper input.search-input.active {
+  width: 300px;
+  padding: 0 45px 0 15px;
+}
+
+/* Botón de búsqueda */
+.nav-wrapper .search-wrapper i.material-icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Posición del ícono de búsqueda */
+.nav-wrapper .search-wrapper i.material-icons.search {
+  right: 10px;
+}
+
+/* Posición del ícono de cierre */
+.nav-wrapper .search-wrapper i.material-icons.close {
+  right: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Ícono de cierre cuando está activo */
+.nav-wrapper .search-wrapper.active i.material-icons.close {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ajuste del ícono de búsqueda cuando está activo */
+.nav-wrapper .search-wrapper.active i.material-icons.search {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Responsive */
+@media only screen and (max-width: 992px) {
+  .nav-wrapper .search-wrapper input.search-input.active {
+    width: calc(100vw - 150px);
+  }
+  
+  .nav-wrapper .search-wrapper {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-wrapper ul li {
+  margin-right: 20px; /* Espacio normal entre ítems */
+}
+
+/* Aplícate un margen negativo a todos menos al botón de búsqueda */
+.nav-wrapper ul li:not(:last-child) {
+  margin-right: 10px; /* Reduce el espacio de los ítems de la izquierda */
+}
+
+/* Estilo específico para el botón de búsqueda */
+.search-wrapper {
+  margin-left: auto; /* Esto empuja el botón de búsqueda a la derecha */
+}
+
+.banner-izq-prod-der {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* 1 parte para la imagen y 3 partes para las imágenes de productos */
+  gap: 20px; /* Espacio entre las columnas */
+  border: 2px solid #ddd; /* Añade un borde de 2px de color gris claro */
+  align-items: start; /* Alinea los ítems en la parte superior */
+  width: 50%;
+}
+
+.title-section {
+  grid-column: 1 / 2; /* Toma la primera columna */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 60px;
+}
+
+.title-section h2 {
+  margin-bottom: 10px; /* Espacio entre el título y la imagen */
+}
+
+.title-image {
+  width: 80%; /* Ajusta el tamaño según necesites */
+  height: auto; /* Mantén la proporción de la imagen */
+  margin-bottom: 20px; /* Espacio entre la imagen y el contenido de productos */
+}
+
+.rainbow-text {
+  margin-bottom: 20px;
+  margin-top: 0px;
+  font-size: 2em; /* Ajusta el tamaño según lo necesites */
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold; /* Hace el texto más grueso */
+  animation: rainbow 3s linear infinite; /* Añade una animación */
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Estilo original del botón */
+/* Estilo original del botón */
+.btn-large {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  animation: pulsate 1s infinite; /* Añade animación de pulsación continua */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Estilo del botón al pasar el cursor por encima */
+.btn-large:hover {
+  background-color: green; /* Cambia el color a verde cuando el cursor esté encima */
+  color: yellow; /* Cambia el color del texto a amarillo */
+  transform: scale(1.1); /* Aumenta el tamaño del botón en un 10% */
+}
+
+/* Keyframes para la animación de pulsación */
+@keyframes pulsate {
+  0% {
+    transform: scale(1); /* Tamaño original */
+  }
+  50% {
+    transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+  }
+  100% {
+    transform: scale(1); /* Vuelve al tamaño original */
+}
+}
+
+
+
+.discount-title {
+  color: red; /* Título en rojo para indicar rebaja */
+  font-family: 'Arial Black', Gadget, sans-serif; /* Fuente más llamativa */
+  font-size: 2em; /* Ajusta el tamaño según necesites */
+  text-transform: uppercase; /* Texto en mayúsculas para más impacto */
+  margin-bottom: 10px; /* Espacio entre el título y la imagen */
+  text-align: center; /* Centra el texto */
+}
+.discount-title {
+  animation: colorChange 2s infinite; /* Añade la animación de cambio de color */
+}
+
+@keyframes colorChange {
+  0% {
+    color: red; /* Empieza en rojo */
+  }
+  50% {
+    color: black; /* Cambia a negro */
+  }
+  100% {
+    color: red; /* Vuelve a rojo */
+  }
+}
+
+.nav-wrapper {
+  height: 50px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  height:50px;
+  
+
+}
+
+.nav-left .left {
+  display: flex;
+  align-items: center;
+  gap: 0px; /* Espacio entre los botones */
+}
+
+.btn-productos, .btn-promociones {
+  background-color: darkblue; /* Azul oscuro */
+  color: white;
+  padding: 5px 20px;
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  border-top-right-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  line-height: 3; /* Ajusta la altura de la línea */
+}
+
+.btn-promociones {
+  background-color: rgb(202, 4, 4); /* Azul oscuro */
+  color: white;
+  padding: 5px 20px;
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  border-top-right-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  line-height: 3; /* Ajusta la altura de la línea */
+}
+
+
+
+.btn-promociones {
+  border-top-left-radius: 15px;
+
+}
+
+.btn-productos:hover{
+  background-color: rgb(20, 20, 160); /* Color más oscuro al pasar el cursor */
+}
+
+.btn-promociones:hover {
+  background-color: rgb(250, 60, 60);
+}
+
+.link-quienes {
+  color: white;
+  text-decoration: underline;
+  margin-left: 0px; /* Espacio a la izquierda del link */
+}
+
+.link-quienes:hover {
+  color: lightblue; /* Cambio de color al pasar el cursor */
+}
+
+.button-container {
+  position: absolute;
+  top: 85%; /* Ajusta para centrar verticalmente */
+  left: 50%; /* Ajusta para centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Centra el botón perfectamente */
+  z-index: 10; /* Asegura que el botón esté encima del carrusel */
+}
+
+
+/* Estilos generales de la tarjeta */
+/* Ajustar el margen entre las tarjetas */
+.product-card {
+  width: 220px; /* Reduce el ancho para mostrar 4 tarjetas por fila */
+  margin: 10px; /* Reduce el espacio entre tarjetas */
+  height: 330px; /* Ajuste de altura */
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.product-card .card-content {
+  padding: 20px; /* Añade espacio interno para que el texto no esté pegado al borde */
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .card-image img {
+  width: 100%;
+  height: 130px;
+  border-radius: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Para que se ajusten bien las cartas */
+  padding-left: 40px;
+ 
+}
+
+.col {
+  flex: 1 1 24%; /* Ajuste para 4 cartas por fila */
+  max-width: 24%;
+}
+
+/* Ajustes para los títulos y precio en negrilla */
+h2, .card-title, .price {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Precio y cantidad de productos vendidos */
+.product-card .price {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ff5722; /* Color llamativo para el precio */
+}
+
+.product-card .sold {
+  color: #555;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* Descripción en color negro */
+.product-card p {
+  color: #000;
+}
+
+/* Efectos de hover */
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-bar {
+  position: fixed;
+  top: 50px;
+  left: 450px; /* Asegúrate de que esté alineado a la izquierda */
+  z-index: 100;
+  background-color: white;
+  padding: 10px 20px;
+  margin: 0 auto;
+  width: 40%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.search-bar input {
+  width: 0;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  margin-right: 10px;
+}
+
+.search-bar.active input {
+  width: 100%;
+  opacity: 1;
+}
+
+.search-icon {
+  height: 30px;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  height: 30px;
+  padding-left: 20px;
+}
